@@ -40,6 +40,6 @@ app.get('/test', (req, res) => {
     //res.render('test');
 });
 
-app.listen(80, () => {
-    console.log('Covid-19 webserver listening on 80');
+app.listen(process.env.PORT, () => {
+    console.log('Covid-19 webserver listening on ' + process.env.PORT);
 });

@@ -7,8 +7,10 @@ function num(num) {
     return Number(num).toLocaleString('el-GR');
 }
 
+// Main stuff
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
 
     var all = JSON.parse($('#all').val());
     var countries = JSON.parse($('#countries').val());

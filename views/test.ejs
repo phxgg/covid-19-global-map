@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 90%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/jVectorMap/jquery-jvectormap-2.0.5.css">
+    </head>
+    <body style="background-color:#383f47;">
+
+        <span class="badge badge-warning" style="margin:5px;">TEST</span>
+        <div id="map"></div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/jVectorMap/jquery-jvectormap-2.0.5.min.js"></script>
+        <script src="/static/jVectorMap/jquery-jvectormap-world-mill.js"></script>
+
+        <script>
+            $(function() {
+            var map,
+                markerIndex = 0,
+                markersCoords = {};
+        
+            map = new jvm.Map({
+                map: 'world_mill',
+                markerStyle: {
+                    initial: {
+                        fill: 'red'
+                    }
+                },
+                container: $('#map'),
+                onMarkerTipShow: function(e, label, code) {
+                    map.tip.text(markersCoords[code].lat.toFixed(2)+', '+markersCoords[code].lng.toFixed(2));
+                },
+                onMarkerClick: function(e, code) {
+                    map.removeMarkers([code]);
+                    map.tip.hide();
+                }
+            });
+        
+            map.container.click(function(e){
+                var latLng = map.pointToLatLng(
+                        e.pageX - map.container.offset().left,
+                        e.pageY - map.container.offset().top
+                    ),
+                    targetCls = $(e.target).attr('class');
+        
+                if (latLng && (!targetCls || (targetCls && $(e.target).attr('class').indexOf('jvectormap-marker') === -1))) {
+                    markersCoords[markerIndex] = latLng;
+                    map.addMarker(markerIndex, {latLng: [latLng.lat, latLng.lng]});
+                    markerIndex += 1;
+                }
+            });
+        });
+        </script>
+    </body>
+</html>

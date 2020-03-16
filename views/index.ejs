@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Covid-19 Global Map</title>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <!--<meta http-equiv="refresh" content="60; URL=/">-->
+        <style>
+        /* Always set the map height explicitly to define the size of the div
+        * element that contains the map. */
+        #map {
+            height: 90%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bottom {
+            position: fixed;
+            text-align: center;
+            bottom: 0;
+            width: 100%;
+        }
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/static/jVectorMap/jquery-jvectormap-2.0.5.css">
+    </head>
+    <body style="background-color:#383f47;">
+        <input type="hidden" id="all" value="<%= JSON.stringify(all); %>">
+        <input type="hidden" id="countries" value="<%= JSON.stringify(countries); %>">
+
+        <span class="badge badge-primary" style="margin:5px;" data-toggle="tooltip" data-placement="right" title="Made by Stam">Coronavirus Global Map</span>
+        <div id="map"></div>
+
+        <div class="bottom" style="padding:5px;">
+            <span class="badge badge-primary" id="globalCases" data-toggle="tooltip" data-placement="top" title="Global Cases"></span>
+            <span class="badge badge-danger" id="globalDeaths" data-toggle="tooltip" data-placement="top" title="Global Deaths"></span>
+            <span class="badge badge-success" id="globalRecovered" data-toggle="tooltip" data-placement="top" title="Global Recoveries"></span>
+            <hr>
+            <button id="contactLink" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="Is there anything wrong?">Contact</button>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/jVectorMap/jquery-jvectormap-2.0.5.min.js"></script>
+        <script src="/static/jVectorMap/jquery-jvectormap-world-mill.js"></script>
+
+        <script src="/static/js/isoCountries.js"></script>
+        <script src="/static/js/main.js"></script>
+        
+        <script>
+            $('#contactLink').click(function(e) {
+                var result = confirm('Please only contact me if there is something wrong with the data shown in the map.');
+                if(result) {
+                    window.open('mailto:malakopitouras1234@hotmail.com?subject=Covid-19 Global Map', '_blank');
+                }
+            });
+        </script>
+    </body>
+</html>

@@ -41,7 +41,15 @@
             <span class="badge badge-danger" id="globalDeaths" data-toggle="tooltip" data-placement="top" title="Global Deaths"></span>
             <span class="badge badge-success" id="globalRecovered" data-toggle="tooltip" data-placement="top" title="Global Recoveries"></span>
             <hr>
-            <button id="contactLink" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="Send an email to: malakopitouras1234@hotmail.com">Contact</button>
+            <button
+            id="contactLink"
+            class="btn btn-sm btn-outline-light"
+            data-toggle="popover"
+            data-trigger="focus"
+            title="Is there something wrong?"
+            data-content="Please only send an email if there is something wrong with the data shown in the map. Email: malakopitouras1234@hotmail.com">
+                Contact
+            </button>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -51,5 +59,11 @@
 
         <script src="/static/js/isoCountries.js"></script>
         <script src="/static/js/main.js"></script>
+
+        <script>
+            $('#contactLink').popover({
+                trigger: 'focus'
+            });
+        </script>
     </body>
 </html>

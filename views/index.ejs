@@ -41,7 +41,7 @@
             <span class="badge badge-danger" id="globalDeaths" data-toggle="tooltip" data-placement="top" title="Global Deaths"></span>
             <span class="badge badge-success" id="globalRecovered" data-toggle="tooltip" data-placement="top" title="Global Recoveries"></span>
             <hr>
-            <button id="contactLink" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="Is there anything wrong?">Contact</button>
+            <button id="contactLink" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="Send an email to: malakopitouras1234@hotmail.com">Contact</button>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -51,14 +51,5 @@
 
         <script src="/static/js/isoCountries.js"></script>
         <script src="/static/js/main.js"></script>
-        
-        <script>
-            $('#contactLink').click(function(e) {
-                var result = confirm('Please only contact me if there is something wrong with the data shown in the map.');
-                if(result) {
-                    window.open('mailto:malakopitouras1234@hotmail.com?subject=Covid-19 Global Map', '_blank');
-                }
-            });
-        </script>
     </body>
 </html>

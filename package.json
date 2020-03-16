@@ -1,0 +1,28 @@
+{
+  "name": "covid-19-global-map",
+  "version": "1.0.0",
+  "description": "Covid-19 Global Map",
+  "main": "app.js",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "novelcovid": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phxgg/covid-19-global-map.git"
+  },
+  "author": "phxgg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phxgg/covid-19-global-map/issues"
+  },
+  "homepage": "https://github.com/phxgg/covid-19-global-map#readme"
+}

@@ -187,6 +187,7 @@ var isoCountries = {
     'Saint Kitts And Nevis': 'KN',
     'Saint Lucia': 'LC',
     'Saint Martin': 'MF',
+    'Sint Maarten': 'SX', // SX or SXM
     'Saint Pierre And Miquelon': 'PM',
     'St. Vincent Grenadines': 'VC',
     'Samoa': 'WS',

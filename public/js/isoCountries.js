@@ -40,7 +40,7 @@ var isoCountries = {
     'Canada': 'CA',
     'Cape Verde': 'CV',
     'Cayman Islands': 'KY',
-    'Central African Republic': 'CF',
+    'CAR': 'CF', /* 'Central African Republic': 'CF' */
     'Chad': 'TD',
     'Chile': 'CL',
     'China': 'CN',
@@ -229,7 +229,7 @@ var isoCountries = {
     'Tuvalu': 'TV',
     'Uganda': 'UG',
     'Ukraine': 'UA',
-    'United Arab Emirates': 'AE',
+    'UAE': 'AE', /* 'United Arab Emirates': 'AE' */
     'United Kingdom': 'GB',
     'USA': 'US',
     'United States Outlying Islands': 'UM',

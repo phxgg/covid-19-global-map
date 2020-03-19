@@ -1,17 +1,34 @@
-var covid = require('novelcovid');
-var express = require('express');
-var path = require('path');
-var app = express();
+const covid = require('novelcovid');
+const express = require('express');
+const path = require('path');
+const app = express();
 
-// covid.all()
-// covid.countries()
+const api = require('./api');
+
+// Schedule API
+(function schedule() {
+    api.getall();
+
+    api.getcountries().then(function() {
+        console.log('getall finished. Waiting for next execution.');
+        setTimeout(function() {
+            console.log('Going to restart getall');
+            schedule();
+        }, 600000);
+    });
+})();
+
+setInterval(() => {
+    api.getall();
+    api.getcountries();
+}, 600000);
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'));
 
 app.use('/static', express.static(path.join(__dirname, 'public')));
-app.use('/static', express.static(path.join(__dirname, 'views')));
 
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
     var all;
     covid.all()
         .then((data) => {
@@ -35,10 +52,12 @@ app.get('/', (req, res) => {
         });
 });
 
-app.get('/test', (req, res) => {
+app.get('/test', async (req, res) => {
     res.status(400).send('wat');
     //res.render('test');
 });
+
+app.use(api.router);
 
 var port = process.env.PORT || 3000;
 app.listen(port, () => {

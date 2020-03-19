@@ -18,7 +18,7 @@ const api = require('./api');
     });
 })();
 
-setInterval(() => {s
+setInterval(() => {
     api.getall();
     api.getcountries();
 }, 600000);

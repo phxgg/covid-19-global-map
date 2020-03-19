@@ -31,7 +31,7 @@ app.get('/', async (req, res) => {
         })
         .catch((err) => {
             console.log('[API: all]: ' + err);
-            res.status(400).render('bad');
+            return res.status(400).render('bad');
         });
 
     covid.countries()
@@ -43,7 +43,7 @@ app.get('/', async (req, res) => {
         })
         .catch((err) => {
             console.log('[API: countries]: ' + err);
-            res.status(400).render('bad');
+            return res.status(400).render('bad');
         });
 });
 

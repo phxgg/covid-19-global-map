@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-const api = require('./api');
+/*const api = require('./api');
 
 // Schedule API
 (function schedule() {
@@ -16,7 +16,7 @@ const api = require('./api');
             schedule();
         }, 600000);
     });
-})();
+})();*/
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));

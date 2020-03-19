@@ -10,18 +10,13 @@ const api = require('./api');
     api.getall();
 
     api.getcountries().then(function() {
-        console.log('getall finished. Waiting for next execution.');
+        console.log('API data update finished. Waiting for the next execution...');
         setTimeout(function() {
-            console.log('Going to restart getall');
+            console.log('Going to update API data');
             schedule();
         }, 600000);
     });
 })();
-
-setInterval(() => {
-    api.getall();
-    api.getcountries();
-}, 600000);
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));

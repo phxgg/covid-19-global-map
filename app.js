@@ -3,20 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-/*const api = require('./api');
-
-// Schedule API
-(function schedule() {
-    api.getall();
-
-    api.getcountries().then(function() {
-        console.log('API data update finished. Waiting for the next execution...');
-        setTimeout(function() {
-            console.log('Going to update API data');
-            schedule();
-        }, 600000);
-    });
-})();*/
+// const api = require('./api');
 
 app.set('view engine', 'ejs')
 app.set('views', path.join(__dirname, 'views'));
@@ -52,7 +39,7 @@ app.get('/test', async (req, res) => {
     //res.render('test');
 });
 
-//app.use(api.router);
+// app.use(api.router);
 
 var port = process.env.PORT || 3000;
 app.listen(port, () => {

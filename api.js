@@ -4,6 +4,19 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 const db = require("quick.db");
 
+// Schedule API
+(function schedule() {
+    getall();
+
+    getcountries().then(function() {
+        console.log('API data update finished. Waiting for the next execution...');
+        setTimeout(function() {
+            console.log('Going to update API data');
+            schedule();
+        }, 600000);
+    });
+})();
+
 //getall
 async function getall() {
     let response;

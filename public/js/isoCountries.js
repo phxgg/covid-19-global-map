@@ -38,7 +38,7 @@ var isoCountries = {
     'Cambodia': 'KH',
     'Cameroon': 'CM',
     'Canada': 'CA',
-    'Cape Verde': 'CV',
+    'Cabo Verde': 'CV',
     'Cayman Islands': 'KY',
     'CAR': 'CF', /* 'Central African Republic': 'CF' */
     'Chad': 'TD',
@@ -105,7 +105,7 @@ var isoCountries = {
     'Iran': 'IR',
     'Iraq': 'IQ',
     'Ireland': 'IE',
-    'Isle Of Man': 'IM',
+    'Isle of Man': 'IM',
     'Israel': 'IL',
     'Italy': 'IT',
     'Jamaica': 'JM',

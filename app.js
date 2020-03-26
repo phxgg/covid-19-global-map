@@ -1,5 +1,6 @@
 const covid = require('novelcovid');
 const express = require('express');
+const axios = require('axios');
 const path = require('path');
 const app = express();
 
@@ -11,6 +12,14 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/static', express.static(path.join(__dirname, 'public')));
 
 app.get('/', async (req, res) => {
+    // get request on covid-19-info-bot to restart the node server
+    axios.get('https://covid-19-info-bot.herokuapp.com').then((resp) => {
+        console.log(`[info bot get request] ${resp}`);
+    }).catch((error) => {
+        console.log(`[info bot get request] ERROR: ${error}`);
+    });
+
+    // go on
     var all;
     covid.all()
         .then((data) => {

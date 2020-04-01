@@ -43,10 +43,6 @@ app.get('/', async (req, res) => {
         });
 });
 
-app.get('/about', async (req, res) => {
-    res.render('about');
-});
-
 app.get('/test', async (req, res) => {
     res.status(400).send('wat');
     //res.render('test');

@@ -34,6 +34,31 @@
         <link rel="stylesheet" type="text/css" href="/static/jVectorMap/jquery-jvectormap-2.0.5.css">
     </head>
     <body style="background-color:#383f47;">
+
+        <!-- about -->
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            Made using the <a href="https://github.com/NovelCOVID/API" target="_blank">NovelCOVID API</a>
+                            <br>
+                            Join their discord <a href="https://discord.gg/EvbMshU" target="_blank">here</a>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <input type="hidden" id="all" value="<%= JSON.stringify(all); %>">
         <input type="hidden" id="countries" value="<%= JSON.stringify(countries); %>">
 
@@ -49,12 +74,10 @@
                 data-trigger="focus"
                 title="Is there something wrong?"
                 data-content="Please only send an email if there is something wrong with the data shown in the map. Email: malakopitouras1234@hotmail.com">-->
-            <a
-                id="aboutLink"
-                class="btn btn-sm btn-outline-light"
-                href="/about">
-                    About
-            </a>
+
+            <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#aboutModal">
+                About
+            </button>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

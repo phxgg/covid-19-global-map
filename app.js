@@ -1,4 +1,5 @@
-const covid = require('novelcovid');
+const { NovelCovid } = require('novelcovid');
+const covid = new NovelCovid();
 const express = require('express');
 const axios = require('axios');
 const path = require('path');

@@ -37,7 +37,7 @@
         <input type="hidden" id="all" value="<%= JSON.stringify(all); %>">
         <input type="hidden" id="countries" value="<%= JSON.stringify(countries); %>">
 
-        <span class="badge badge-primary" style="margin:5px;" data-toggle="tooltip" data-placement="right" title="Made by Stamatis">Covid-19 Global Map Spread</span>
+        <span class="badge badge-primary" style="margin:5px;" data-toggle="tooltip" data-placement="right" title="Made using the NovelCOVID API">Covid-19 Global Map Spread</span>
         <div id="map"></div>
 
         <div class="bottom" style="padding:5px;">
@@ -45,15 +45,16 @@
             <span class="badge badge-danger" id="globalDeaths" data-toggle="tooltip" data-placement="top" title="Global Deaths"></span>
             <span class="badge badge-success" id="globalRecovered" data-toggle="tooltip" data-placement="top" title="Global Recoveries"></span>
             <hr>
-            <button
-                id="contactLink"
-                class="btn btn-sm btn-outline-light"
-                data-toggle="popover"
+            <!--data-toggle="popover"
                 data-trigger="focus"
                 title="Is there something wrong?"
-                data-content="Please only send an email if there is something wrong with the data shown in the map. Email: malakopitouras1234@hotmail.com">
-                    Contact
-            </button>
+                data-content="Please only send an email if there is something wrong with the data shown in the map. Email: malakopitouras1234@hotmail.com">-->
+            <a
+                id="aboutLink"
+                class="btn btn-sm btn-outline-light"
+                href="/about">
+                    About
+            </a>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

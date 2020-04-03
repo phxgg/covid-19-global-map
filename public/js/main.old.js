@@ -1,7 +1,4 @@
 function getPercentage(total, obtained) {
-    total = parseInt(total.replace(/\./g,'').replace('.',','));
-    obtained = parseInt(obtained.replace(/\./g,'').replace('.',','));
-
     var percentage = (obtained * 100)/total;
     return percentage.toFixed(2) + '%';
 }
@@ -33,7 +30,6 @@ $(function() {
     // convert to country code data cuz the map only support country code
     for(var i = 0; i < countries.length; i++){
         var obj = countries[i];
-
         scaling[getCountryCode(obj['country'])] = obj['cases'];
 
         data[getCountryCode(obj['country'])] = {

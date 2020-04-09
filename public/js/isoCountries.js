@@ -188,11 +188,11 @@ var isoCountries = {
     'Saint Lucia': 'LC',
     'Saint Martin': 'MF',
     'Sint Maarten': 'SX', // SX or SXM
-    'Saint Pierre And Miquelon': 'PM',
+    'Saint Pierre Miquelon': 'PM',
     'Saint Vincent and the Grenadines': 'VC',
     'Samoa': 'WS',
     'San Marino': 'SM',
-    'Sao Tome And Principe': 'ST',
+    'Sao Tome and Principe': 'ST',
     'Saudi Arabia': 'SA',
     'Senegal': 'SN',
     'Serbia': 'RS',
@@ -208,6 +208,7 @@ var isoCountries = {
     'Spain': 'ES',
     'Sri Lanka': 'LK',
     'Sudan': 'SD',
+    'South Sudan': 'SS',
     'Suriname': 'SR',
     'Svalbard And Jan Mayen': 'SJ',
     'Swaziland': 'SZ', // Eswatini

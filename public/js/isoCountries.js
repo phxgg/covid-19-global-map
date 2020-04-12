@@ -217,7 +217,7 @@ var isoCountries = {
     'Syrian Arab Republic': 'SY',
     'Taiwan': 'TW',
     'Tajikistan': 'TJ',
-    'Tanzania, United Republic of': 'TZ',
+    'Tanzania': 'TZ',
     'Thailand': 'TH',
     'Timor-Leste': 'TL',
     'Togo': 'TG',

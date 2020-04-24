@@ -154,7 +154,7 @@ var isoCountries = {
     'Nauru': 'NR',
     'Nepal': 'NP',
     'Netherlands': 'NL',
-    'Netherlands Antilles': 'AN',
+    'Caribbean Netherlands': 'AN', // Netherlands Antilles
     'New Caledonia': 'NC',
     'New Zealand': 'NZ',
     'Nicaragua': 'NI',

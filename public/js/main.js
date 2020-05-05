@@ -69,12 +69,12 @@ $(function() {
         },
         backgroundColor: '#383f47',
         markers: [
-            {latLng: [53.29, 4.44], name: 'MS Zaandam'},
+            {latLng: [55.33, 3.83], name: 'MS Zaandam'}, // 53.96, 4.18
             {latLng: [33.02, 143.71], name: 'Diamond Princess'},
         ],
         onMarkerTipShow: function(event, label, code) {
             var markerData = {};
-            
+
             if(label.html() == 'Diamond Princess'){
                 markerData = data['DiamondPrincess'];
             }

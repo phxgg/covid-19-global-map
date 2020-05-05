@@ -69,37 +69,30 @@ $(function() {
         },
         backgroundColor: '#383f47',
         markers: [
+            {latLng: [53.29, 4.44], name: 'MS Zaandam'},
             {latLng: [33.02, 143.71], name: 'Diamond Princess'},
         ],
         onMarkerTipShow: function(event, label, code) {
+            var markerData = {};
+            
+            if(label.html() == 'Diamond Princess'){
+                markerData = data['DiamondPrincess'];
+            }
+            else if(label.html() == 'MS Zaandam') {
+                markerData = data['MSZaandam'];
+            }
+            
             label.html(
                 '<h6 class="text-primary">' +  label.html() + '</h6>'
-                    + 'Cases: <span class="badge badge-primary"> ' + num(data['DiamondPrincess']['cases']) + '</span>'
-                    + '<br>Deaths: <span class="badge badge-danger">' + num(data['DiamondPrincess']['deaths']) + '</span>'
-                    + '<br>Today Cases: <span class="badge badge-info">' + num(data['DiamondPrincess']['todayCases']) + '</span>'
-                    + '<br>Today Deaths: <span class="badge badge-danger">' + num(data['DiamondPrincess']['todayDeaths']) + '</span>'
-                    + '<br>Recovered: <span class="badge badge-success">' + num(data['DiamondPrincess']['recovered']) + '</span>'
-                    + '<br>Critical: <span class="badge badge-warning">' + num(data['DiamondPrincess']['critical']) + '</span>'
-            );                
+                    + 'Cases: <span class="badge badge-primary"> ' + num(markerData['cases']) + '</span>'
+                    + '<br>Deaths: <span class="badge badge-danger">' + num(markerData['deaths']) + '</span>'
+                    + '<br>Today Cases: <span class="badge badge-info">' + num(markerData['todayCases']) + '</span>'
+                    + '<br>Today Deaths: <span class="badge badge-danger">' + num(markerData['todayDeaths']) + '</span>'
+                    + '<br>Recovered: <span class="badge badge-success">' + num(markerData['recovered']) + '</span>'
+                    + '<br>Critical: <span class="badge badge-warning">' + num(markerData['critical']) + '</span>'
+            );
         },
         onRegionTipShow: function(e, el, code) {
-            // for(var i = 0; i < countries.length; i++) {
-            //     var obj = countries[i];
-            //     if(obj['country'] == el.html()
-            //     || obj['country'] == 'USA' && el.html() == 'United States'
-            //     || obj['country'] == 'S. Korea' && el.html() == 'Korea'
-            //     || obj['country'] == 'French Guiana' && el.html() == 'France') {
-            //         el.html(
-            //             '<h6 class="text-primary">' +  el.html() + '</h6>'
-            //             + 'Cases: <span class="badge badge-primary"> ' + num(obj['cases']) + '</span>'
-            //             + '<br>Deaths: <span class="badge badge-danger">' + num(obj['deaths']) + '</span>'
-            //             + '<br>Today Cases: <span class="badge badge-info">' + num(obj['todayCases']) + '</span>'
-            //             + '<br>Today Deaths: <span class="badge badge-danger">' + num(obj['todayDeaths']) + '</span>'
-            //             + '<br>Recovered: <span class="badge badge-success">' + num(obj['recovered']) + '</span>'
-            //             + '<br>Critical: <span class="badge badge-warning">' + num(obj['critical']) + '</span>'
-            //         );
-            //     }
-            // }
             if(data[code]) {
                 el.html(
                     '<h6 class="text-primary">' +  el.html() + '</h6>'

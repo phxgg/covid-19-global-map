@@ -249,7 +249,8 @@ var isoCountries = {
     'Zimbabwe': 'ZW',
 
     'UK': 'GB',
-    'Diamond Princess': 'DiamondPrincess'
+    'Diamond Princess': 'DiamondPrincess',
+    'MS Zaandam': 'MSZaandam',
 };
 
 function getCountryCode(countryName) {

@@ -14,6 +14,7 @@ function num(num) {
 $(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
+    // start doing map things
     var all = JSON.parse($('#all').val());
     var countries = JSON.parse($('#countries').val());
 
@@ -69,7 +70,7 @@ $(function() {
         },
         backgroundColor: '#383f47',
         markers: [
-            {latLng: [55.33, 3.83], name: 'MS Zaandam'}, // 53.96, 4.18
+            {latLng: [55.33, 3.83], name: 'MS Zaandam'},
             {latLng: [33.02, 143.71], name: 'Diamond Princess'},
         ],
         onMarkerTipShow: function(event, label, code) {

@@ -9,26 +9,7 @@
         <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
         
-        <style>
-        /* Always set the map height explicitly to define the size of the div
-        * element that contains the map. */
-        #map {
-            height: 90%;
-        }
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
-        .bottom {
-            position: fixed;
-            text-align: center;
-            bottom: 0;
-            width: 100%;
-        }
-        </style>
+        <link rel="stylesheet" type="text/css" href="/static/css/app.css">
 
         <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/static/jVectorMap/jquery-jvectormap-2.0.5.css">
@@ -36,7 +17,6 @@
     <body style="background-color:#383f47;">
 
         <!-- about modal -->
-
         <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -61,22 +41,21 @@
         </div>
 
         <!-- map -->
-
         <input type="hidden" id="all" value="<%= JSON.stringify(all); %>">
         <input type="hidden" id="countries" value="<%= JSON.stringify(countries); %>">
 
-        <span class="badge badge-primary" style="margin:5px;" data-toggle="tooltip" data-placement="right" title="Made using the NovelCOVID API">Covid-19 Global Map Spread</span>
+        <span class="badge badge-primary" style="margin:5px;" data-toggle="tooltip" data-placement="right" title="Made using the NovelCOVID API">
+            Covid-19 Global Map Spread
+        </span>
+
         <div id="map"></div>
 
         <div class="bottom" style="padding:5px;">
             <span class="badge badge-primary" id="globalCases" data-toggle="tooltip" data-placement="top" title="Global Cases"></span>
             <span class="badge badge-danger" id="globalDeaths" data-toggle="tooltip" data-placement="top" title="Global Deaths"></span>
             <span class="badge badge-success" id="globalRecovered" data-toggle="tooltip" data-placement="top" title="Global Recoveries"></span>
+
             <hr>
-            <!--data-toggle="popover"
-                data-trigger="focus"
-                title="Is there something wrong?"
-                data-content="Please only send an email if there is something wrong with the data shown in the map. Email: malakopitouras1234@hotmail.com">-->
 
             <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target="#aboutModal">
                 About

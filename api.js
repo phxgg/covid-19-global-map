@@ -1,3 +1,8 @@
+/*
+This is from the earliest version of the novelcovid API.
+It is not used, but I kept it here for educational purposes.
+*/
+
 const express = require('express');
 const router = express.Router();
 const axios = require("axios");

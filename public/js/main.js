@@ -64,8 +64,6 @@ $(function() {
         markerStyle: {
             initial: {
                 image: '/static/images/cruiseship1.png',
-                /*fill: '#F8E23B',
-                stroke: '#383f47'*/
             }
         },
         backgroundColor: '#383f47',

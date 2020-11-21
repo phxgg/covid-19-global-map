@@ -242,7 +242,7 @@ var isoCountries = {
     'Vietnam': 'VN',
     'British Virgin Islands': 'VG',
     'U.S. Virgin Islands': 'VI',
-    'Wallis And Futuna': 'WF',
+    'Wallis and Futuna': 'WF',
     'Western Sahara': 'EH',
     'Yemen': 'YE',
     'Zambia': 'ZM',
